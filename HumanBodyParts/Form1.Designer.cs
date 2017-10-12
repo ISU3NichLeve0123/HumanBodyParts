@@ -45,6 +45,7 @@
             this.cashLabel = new System.Windows.Forms.Label();
             this.changeLabel = new System.Windows.Forms.Label();
             this.cashTextBox = new System.Windows.Forms.TextBox();
+            this.errorLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // eyeLabel
@@ -185,7 +186,7 @@
             // changeLabel
             // 
             this.changeLabel.AutoSize = true;
-            this.changeLabel.Location = new System.Drawing.Point(12, 340);
+            this.changeLabel.Location = new System.Drawing.Point(24, 341);
             this.changeLabel.Name = "changeLabel";
             this.changeLabel.Size = new System.Drawing.Size(44, 13);
             this.changeLabel.TabIndex = 14;
@@ -201,11 +202,22 @@
             this.cashTextBox.TabIndex = 15;
             this.cashTextBox.Visible = false;
             // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.Location = new System.Drawing.Point(68, 8);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(13, 13);
+            this.errorLabel.TabIndex = 16;
+            this.errorLabel.Text = "h";
+            this.errorLabel.Visible = false;
+            // 
             // medicalSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(463, 399);
+            this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.cashTextBox);
             this.Controls.Add(this.changeLabel);
             this.Controls.Add(this.cashLabel);
@@ -248,6 +260,7 @@
         private System.Windows.Forms.Label cashLabel;
         private System.Windows.Forms.Label changeLabel;
         private System.Windows.Forms.TextBox cashTextBox;
+        private System.Windows.Forms.Label errorLabel;
     }
 }
 

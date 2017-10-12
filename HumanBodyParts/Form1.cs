@@ -28,7 +28,7 @@ namespace HumanBodyParts
         double subtotal;
         double tax;
         double total;
-        int cash;
+        double cash;
         double change;
         public medicalSale()
         {
@@ -38,27 +38,39 @@ namespace HumanBodyParts
 
         private void calculateButton_Click(object sender, EventArgs e)
         {
+            try { 
             eye = Convert.ToInt16(eyeTextBox.Text);
             leg = Convert.ToInt16(legTextBox.Text);
-            heart= Convert.ToInt16(heartTextBox.Text);
+            heart = Convert.ToInt16(heartTextBox.Text);
             subtotal = eye * EYE + leg * LEG + heart * HEART;
             subTotalLabel.Visible = true;
-            subTotalLabel.Text = "SubTotal:            " + Convert.ToString(subtotal);
+            subTotalLabel.Text = "SubTotal:            " + subtotal.ToString("C");
             tax = subtotal * TAX;
             taxLabel.Visible = true;
-            taxLabel.Text = "     Tax:                 " + Convert.ToString(tax);
+            taxLabel.Text = "     Tax:                 " + tax.ToString("C");
             totalLabel.Visible = true;
             total = tax + subtotal;
-            totalLabel.Text = "   Total:               " + Convert.ToString(total);
+            totalLabel.Text = "   Total:               " + total.ToString("C");
             cashLabel.Visible = true;
             cashTextBox.Visible = true;
             changeButton.Visible = true;
             changeLabel.Visible = true;
+            }
+            catch
+            {
+                taxLabel.Text = "ERROR:INVAILD INPUT";
+            }
         }
 
         private void printReciptButton_Click(object sender, EventArgs e)
         {
+            Graphics receiptGraphics = this.CreateGraphics();
+            Pen reciptPen = new Pen(Color.Black, 10);
+            SolidBrush recpitBrush = new SolidBrush(Color.White);
+            receiptGraphics.DrawRectangle(reciptPen, 200, 20 ,250, 250);
 
+            receiptGraphics.FillRectangle( recpitBrush , 200, 20, 250, 250);
+            newOrderButon.Visible = true;
         }
 
         private void newOrderButon_Click(object sender, EventArgs e)
@@ -68,10 +80,17 @@ namespace HumanBodyParts
 
         private void changeButton_Click(object sender, EventArgs e)
         {
-
-            cash = Convert.ToInt16(cashTextBox.Text);
-            change = cash - total;
-            changeLabel.Text = "Change:               " + Convert.ToString(change);
+            try
+            {
+                cash = Convert.ToInt16(cashTextBox.Text);
+                change = cash - total;
+                changeLabel.Text = "Change:               " + change.ToString("C");
+                printReciptButton.Visible = true;
+            }
+            catch
+            {
+                taxLabel.Text = "ERROR:INVALID ACTION";
+            }
         }
     }
 }
