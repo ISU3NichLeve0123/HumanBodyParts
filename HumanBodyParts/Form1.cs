@@ -65,11 +65,31 @@ namespace HumanBodyParts
         private void printReciptButton_Click(object sender, EventArgs e)
         {
             Graphics receiptGraphics = this.CreateGraphics();
-            Pen reciptPen = new Pen(Color.Black, 10);
-            SolidBrush recpitBrush = new SolidBrush(Color.White);
-            receiptGraphics.DrawRectangle(reciptPen, 200, 20 ,250, 250);
+            Pen receiptPen = new Pen(Color.Black, 10);
+            Font tittleFont = new Font("Courier New", 12, FontStyle.Bold);
+            Font writingFont = new Font("Courier New", 8, FontStyle.Bold);
+            SolidBrush whiteBrush = new SolidBrush(Color.White);
+            SolidBrush receiptBrush = new SolidBrush(Color.Black);
 
-            receiptGraphics.FillRectangle( recpitBrush , 200, 20, 250, 250);
+            receiptGraphics.DrawRectangle(receiptPen, 200, 20, 250, 250);
+            receiptGraphics.FillRectangle(receiptBrush, 200, 20, 250, 250);
+            receiptGraphics.TranslateTransform(200, 30);
+            receiptGraphics.DrawString("Medical Sale Reciept", tittleFont, whiteBrush, new Rectangle());
+            receiptGraphics.TranslateTransform(0, 30);
+            receiptGraphics.DrawString("Order # 4E + 256", writingFont, whiteBrush, new Rectangle());
+            receiptGraphics.TranslateTransform(0, 30);
+            receiptGraphics.DrawString("November 11, 2999", writingFont, whiteBrush, new Rectangle());
+            receiptGraphics.TranslateTransform(0, 30);
+            receiptGraphics.DrawString("Heart:   " + heart +"@" + heart*HEART, writingFont, whiteBrush, new Rectangle());
+            receiptGraphics.DrawRectangle(receiptPen, 0, 140, 250, 40);
+            receiptGraphics.TranslateTransform(0, 30);
+            receiptGraphics.DrawString("Leg:   " + leg + " @ " + leg*LEG, writingFont, whiteBrush, new Rectangle());
+            receiptGraphics.TranslateTransform(0, 30);
+            receiptGraphics.DrawString("Eye:   " + eye + " @ " + eye*EYE,writingFont, whiteBrush, new Rectangle());
+
+
+
+
             newOrderButon.Visible = true;
         }
 
