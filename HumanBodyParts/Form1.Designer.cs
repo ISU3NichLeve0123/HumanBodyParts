@@ -39,7 +39,7 @@
             this.subTotalLabel = new System.Windows.Forms.Label();
             this.taxLabel = new System.Windows.Forms.Label();
             this.printReciptButton = new System.Windows.Forms.Button();
-            this.newOrderButon = new System.Windows.Forms.Button();
+            this.newOrderButton = new System.Windows.Forms.Button();
             this.totalLabel = new System.Windows.Forms.Label();
             this.changeButton = new System.Windows.Forms.Button();
             this.cashLabel = new System.Windows.Forms.Label();
@@ -138,16 +138,16 @@
             this.printReciptButton.Visible = false;
             this.printReciptButton.Click += new System.EventHandler(this.printReciptButton_Click);
             // 
-            // newOrderButon
+            // newOrderButton
             // 
-            this.newOrderButon.Location = new System.Drawing.Point(316, 364);
-            this.newOrderButon.Name = "newOrderButon";
-            this.newOrderButon.Size = new System.Drawing.Size(75, 23);
-            this.newOrderButon.TabIndex = 10;
-            this.newOrderButon.Text = "New Order";
-            this.newOrderButon.UseVisualStyleBackColor = true;
-            this.newOrderButon.Visible = false;
-            this.newOrderButon.Click += new System.EventHandler(this.newOrderButon_Click);
+            this.newOrderButton.Location = new System.Drawing.Point(316, 364);
+            this.newOrderButton.Name = "newOrderButton";
+            this.newOrderButton.Size = new System.Drawing.Size(75, 23);
+            this.newOrderButton.TabIndex = 10;
+            this.newOrderButton.Text = "New Order";
+            this.newOrderButton.UseVisualStyleBackColor = true;
+            this.newOrderButton.Visible = false;
+            this.newOrderButton.Click += new System.EventHandler(this.newOrderButon_Click);
             // 
             // totalLabel
             // 
@@ -205,12 +205,10 @@
             // errorLabel
             // 
             this.errorLabel.AutoSize = true;
-            this.errorLabel.Location = new System.Drawing.Point(68, 8);
+            this.errorLabel.Location = new System.Drawing.Point(179, 364);
             this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(13, 13);
+            this.errorLabel.Size = new System.Drawing.Size(0, 13);
             this.errorLabel.TabIndex = 16;
-            this.errorLabel.Text = "h";
-            this.errorLabel.Visible = false;
             // 
             // medicalSale
             // 
@@ -223,7 +221,7 @@
             this.Controls.Add(this.cashLabel);
             this.Controls.Add(this.changeButton);
             this.Controls.Add(this.totalLabel);
-            this.Controls.Add(this.newOrderButon);
+            this.Controls.Add(this.newOrderButton);
             this.Controls.Add(this.printReciptButton);
             this.Controls.Add(this.taxLabel);
             this.Controls.Add(this.subTotalLabel);
@@ -254,7 +252,7 @@
         private System.Windows.Forms.Label subTotalLabel;
         private System.Windows.Forms.Label taxLabel;
         private System.Windows.Forms.Button printReciptButton;
-        private System.Windows.Forms.Button newOrderButon;
+        private System.Windows.Forms.Button newOrderButton;
         private System.Windows.Forms.Label totalLabel;
         private System.Windows.Forms.Button changeButton;
         private System.Windows.Forms.Label cashLabel;
