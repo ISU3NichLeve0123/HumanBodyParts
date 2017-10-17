@@ -21,7 +21,6 @@ namespace HumanBodyParts
         const double LEG = 999.99;
         const double EYE = 450.97;
 
-
         //Variables
         int eye;
         int leg;
@@ -39,7 +38,7 @@ namespace HumanBodyParts
 
         private void calculateButton_Click(object sender, EventArgs e)
         {
-            //Calculates the total price of the order
+            //Calculates the total price of the order and checks for an error
             try
             {
                 eye = Convert.ToInt16(eyeTextBox.Text);
@@ -67,7 +66,7 @@ namespace HumanBodyParts
 
         private void printReciptButton_Click(object sender, EventArgs e)
         {
-            //Draws a recipet
+            //Draws a reciept and plays a reciept playing sound
             Graphics receiptGraphics = this.CreateGraphics();
             Pen receiptPen = new Pen(Color.Black, 10);
             Font tittleFont = new Font("Courier New", 12, FontStyle.Bold);
@@ -142,7 +141,7 @@ namespace HumanBodyParts
 
         private void changeButton_Click(object sender, EventArgs e)
         {
-            //Calculates the  total change for the cash the user put's in
+            //Calculates the  total change for the cash the user put's in, also's checks for errors
             try
             {
                 cash = Convert.ToInt16(cashTextBox.Text);
