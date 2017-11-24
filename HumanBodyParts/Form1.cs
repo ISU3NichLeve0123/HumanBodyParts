@@ -154,5 +154,31 @@ namespace HumanBodyParts
                 errorLabel.Text = "ERROR:INVALID ACTION";
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+
+
+                Pen pen = new Pen(Color.White, 10);
+                int x1 = 0;
+                int y1 = 0;
+                int x2 = 0;
+                int y2 = 0;
+                int x3 = 0;
+                int y3 = 0;
+                DrawTriangle(pen, x1, x2, x3, y1, y2, y3);
+
+
+   
+        }
+        public void DrawTriangle(Pen pen, int x1, int x2, int x3, int y1, int y2, int y3)
+        {
+            Graphics fg = this.CreateGraphics();
+            fg.DrawLine(pen, x1, y1, x2, y2);
+            fg.DrawLine(pen, x2, y2, x3, y3);
+            fg.DrawLine(pen, x3, y3, x1, y1);
+
+        }
     }
 }
